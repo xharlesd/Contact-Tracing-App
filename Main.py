@@ -7,3 +7,19 @@
 - Please dont follow any online contact tracing programming tutorial
 """
 
+# import necessary modules to be used
+# tkinter
+# classes
+
+# class MainWindow 
+
+    # constructor
+    # program title
+
+    # create tkinter frame window
+
+    # create label for add entry 
+    # button for add entry
+
+    # create label for search entry
+    # button for search entry
