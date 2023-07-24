@@ -8,11 +8,20 @@
 """
 
 # import necessary modules to be used
-# tkinter
-# classes
+import customtkinter as ctk
+import tkinter as tk
+# import classes (soon)
 
-# class MainWindow 
 
+# App background appearance
+ctk.set_appearance_mode("System")
+
+# App color theme
+ctk.set_default_color_theme("dark-blue") 
+
+# App Class
+class CTMainWindow(ctk.CTk):
+    """"""
     # constructor
     # program title
 
