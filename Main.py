@@ -12,10 +12,10 @@ from tkinter import *
 from tkinter import ttk
 import tkinter as tk
 # import classes (soon)
-
+from Obtain import Register
 # App Class
 class ContactTracing():
-    
+
     # constructor
     def __init__(self):
         self.window = tk.Tk()
@@ -37,12 +37,18 @@ class ContactTracing():
         app_title.place(x = 455, y = 155, width = 450, height = 20)
 
         # button for add entry
-        add_info_Button = tk.Button(self.window, text = "Add Info", fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"))
+        add_info_Button = tk.Button(self.window, text = "Add Info", command = self.register_window, fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"))
         add_info_Button.place(x = 550, y = 310, width = 250, height = 90)
         
         # button for search entry
         search_info_Button = tk.Button(self.window, text = "Search Data", fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"), )
         search_info_Button.place(x = 550, y = 420, width = 250, height = 90)
+
+        self.window.mainloop()
+
+    def register_window(self):
+        self.window.destroy()
+        Register()
 
     def run(self):
         self.window.mainloop()

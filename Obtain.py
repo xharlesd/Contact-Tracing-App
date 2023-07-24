@@ -1,13 +1,23 @@
 # Input user data
 
 # import necessary modules to be used
+from tkinter import *
+from tkinter import ttk
+import tkinter as tk
 
 # class add entry
-
+class Register():
+    """"""
     # constructor
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title("Contact Tracing App")  # program title
+        self.window.geometry('1000x700')  # tkinter frame window
 
-    # declare variables    
-
+        # declare variables    
+        app_title = tk.Label(self.window, text = "PUP CONTACT TRACING APP", fg = "gray", bg = "white", font=("Arial",20,"bold"))
+        app_title.place(x = 455, y = 155, width = 450, height = 20)
+    
     # tkinter window
 
     # get name 
@@ -49,3 +59,9 @@
     # ask question "Have you had exposure to a probable or confirmed case in the last 14 days?"
     # radio button for choices
 
+    def run(self):
+        self.window.mainloop()
+
+if __name__ == "__main__":
+    App = Register()
+    App.run()
