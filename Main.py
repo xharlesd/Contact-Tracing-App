@@ -15,6 +15,7 @@ import tkinter as tk
 
 # App Class
 class ContactTracing():
+    
     # constructor
     def __init__(self):
         self.window = tk.Tk()
