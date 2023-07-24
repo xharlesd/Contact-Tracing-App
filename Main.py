@@ -28,13 +28,21 @@ class ContactTracing(ctk.CTk):
         super().__init__(fg_color, **kwargs)
 
         self.title("Contact Tracing App")  # program title
-        self.geometry('900x600')  # tkinter frame window
+        self.geometry('1000x700')  # tkinter frame window
     
-    # create label for add entry 
-    # button for add entry
+        # button for add entry
+        self.add_user_info_Button = ctk.CTkButton(self, text = "Add Contact Tracing Info",
+                                                  height = 80, width = 400, font=("Arial",28,"bold"), 
+                                                  )
+        self.add_user_info_Button.grid(row=5, column=1,
+                                        columnspan=2,
+                                        padx=520, pady=200,
+                                        sticky ="ew")
+        
+        # create label for search entry
+        
+        # button for search entry
 
-    # create label for search entry
-    # button for search entry
 
 if __name__ == "__main__":
     ContactTracing = ContactTracing()
