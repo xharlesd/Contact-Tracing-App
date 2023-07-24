@@ -31,17 +31,20 @@ class ContactTracing(ctk.CTk):
         self.geometry('1000x700')  # tkinter frame window
     
         # button for add entry
-        self.add_user_info_Button = ctk.CTkButton(self, text = "Add Contact Tracing Info",
-                                                  height = 80, width = 400, font=("Arial",28,"bold"), 
+        self.add_info_Button = ctk.CTkButton(self, text = "Add Info",
+                                                  height = 80, width = 300, font=("Arial",28,"bold"), 
                                                   )
-        self.add_user_info_Button.grid(row=5, column=1,
+        self.add_info_Button.grid(row=5, column=1,
                                         columnspan=2,
-                                        padx=520, pady=200,
+                                        padx=600, pady=140,
                                         sticky ="ew")
         
-        # create label for search entry
-        
         # button for search entry
+        self.search_info_Button = ctk.CTkButton(self, text = "Search Data",
+                                                  height = 80, width = 300, font=("Arial",28,"bold"), 
+                                                  )
+        self.search_info_Button.grid(row=6, column=1,
+                                        padx=600, pady=0)
 
 
 if __name__ == "__main__":
