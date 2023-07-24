@@ -8,45 +8,37 @@
 """
 
 # import necessary modules to be used
-from typing import Optional, Tuple, Union
-import customtkinter as ctk
+from tkinter import *
+from tkinter import ttk
 import tkinter as tk
 # import classes (soon)
 
-
-# App background appearance
-ctk.set_appearance_mode("Light")
-
-# App color theme
-ctk.set_default_color_theme("dark-blue") 
-
 # App Class
-class ContactTracing(ctk.CTk):
-    """"""
+class ContactTracing():
     # constructor
-    def __init__(self, fg_color: str | Tuple[str, str] | None = None, **kwargs):
-        super().__init__(fg_color, **kwargs)
-
-        self.title("Contact Tracing App")  # program title
-        self.geometry('1000x700')  # tkinter frame window
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title("Contact Tracing App")  # program title
+        self.window.geometry('1000x700')  # tkinter frame window
     
+        red_frame = tk.Frame(bd=0, highlightthickness=0, background="red")
+        blue_frame = tk.Frame(bd=0, highlightthickness=0, background="white")
+        red_frame.place(x=0, y=0, relwidth=0.4, relheight=1, anchor="nw")
+        blue_frame.place(relx=0.35, y=0, relwidth=0.7, relheight=1, anchor="nw")
+
         # button for add entry
-        self.add_info_Button = ctk.CTkButton(self, text = "Add Info",
-                                                  height = 80, width = 300, font=("Arial",28,"bold"), 
-                                                  )
-        self.add_info_Button.grid(row=5, column=1,
-                                        columnspan=2,
-                                        padx=600, pady=140,
-                                        sticky ="ew")
+        add_info_Button = tk.Button(self.window, text = "Add Info", fg = "white", bg = "#0096FF", font=("Century Gothic",24,"bold"))
+        add_info_Button.place(x = 570, y = 210, width = 250, height = 90)
         
         # button for search entry
-        self.search_info_Button = ctk.CTkButton(self, text = "Search Data",
-                                                  height = 80, width = 300, font=("Arial",28,"bold"), 
-                                                  )
-        self.search_info_Button.grid(row=6, column=1,
-                                        padx=600, pady=0)
+        search_info_Button = tk.Button(self.window, text = "Search Data", fg = "white", bg = "#0096FF", font=("Century Gothic",24,"bold"), )
+        search_info_Button.place(x = 570, y = 320, width = 250, height = 90)
 
+
+
+    def run(self):
+        self.window.mainloop()
 
 if __name__ == "__main__":
-    ContactTracing = ContactTracing()
-    ContactTracing.mainloop()
+    App = ContactTracing()
+    App.run()
