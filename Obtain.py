@@ -203,6 +203,14 @@ class Register():
         self.exposure_choice3_radio = Radiobutton(self.window, text="Uncertain", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="3")
         self.exposure_choice3_radio.place(x=765, y=576)
 
+        # button for submit entry
+        self.add_info_Button = tk.Button(self.window, text = "SUBMIT", fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
+        self.add_info_Button.place(x = 760, y = 645, width = 155, height = 55)
+
+        # button for clear entry
+        self.add_info_Button = tk.Button(self.window, text = "CLEAR", fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
+        self.add_info_Button.place(x = 920, y = 645, width = 155, height = 55)
+    
     def run(self):
         self.window.mainloop()
 
