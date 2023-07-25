@@ -20,7 +20,7 @@ class ContactTracing():
     def __init__(self):
         self.window = tk.Tk()
         self.window.title("Contact Tracing App")  # program title
-        self.window.geometry('1200x800')  # tkinter frame window
+        self.window.geometry('1190x820')  # tkinter frame window
     
         red_frame = tk.Frame(bd=0, highlightthickness=0, background="#800000")
         white_frame = tk.Frame(bd=0, highlightthickness=0, background="white")
