@@ -63,7 +63,7 @@ class Register():
 
         # textbox for email address
         self.email_address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.email_address_textbox .place(x = 580, y = 195, width = 230, height = 30)
+        self.email_address_textbox.place(x = 580, y = 195, width = 230, height = 30)
 
         # get contact number
         self.contact_number_label = tk.Label(self.window, text = "Contact Number", fg = "black", bg = "white", font=("Trajan Pro",13))
@@ -71,7 +71,7 @@ class Register():
 
         # textbox for contact number
         self.contact_number_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.contact_number_textbox .place(x = 580, y = 260, width = 230, height = 30)
+        self.contact_number_textbox.place(x = 580, y = 260, width = 230, height = 30)
         
         # get Gender 
         self.gender_label = tk.Label(self.window, text = "Gender", fg = "black", bg = "white", font=("Trajan Pro",13))
@@ -87,15 +87,15 @@ class Register():
 
         # textbox for address
         self.address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.address_textbox .place(x = 323, y = 390, width = 488, height = 30)
+        self.address_textbox.place(x = 323, y = 390, width = 488, height = 30)
         
         # contact person 
         self.contact_person_details = tk.Label(self.window, text = "Contact Person Details", fg = "#494F55", bg = "white", font=("Helvetica",15,"bold"))
         self.contact_person_details.place(x = 850, y = 143, width = 240, height = 22)
         
         # get name of contact person
-        self.name_label = tk.Label(self.window, text = "Name", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.name_label.place(x = 865, y = 175, width = 45, height = 20)
+        self.cp_name_label = tk.Label(self.window, text = "Name", fg = "black", bg = "white", font=("Trajan Pro",13))
+        self.cp_name_label.place(x = 865, y = 175, width = 45, height = 20)
         
         # textbox for name of contact person
         self.cp_name_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
@@ -134,7 +134,7 @@ class Register():
         self.ques1_label.place(x = 320, y = 485, width = 335, height = 20)
         
         # radio buttons for choices
-        self.vaccinated_choice = IntVar()
+        self.vaccinated_choice = tk.IntVar()
         self.vaccinated_choice1_radio = Radiobutton(self.window, text="Not Yet", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="1")
         self.vaccinated_choice1_radio.place(x=340, y=507)
 
@@ -193,7 +193,7 @@ class Register():
         self.ques3_label.place(x = 682, y = 505, width = 420, height = 20)
         
         # radio buttons for choices
-        self.exposure_choice = IntVar()
+        self.exposure_choice = tk.IntVar()
         self.exposure_choice1_radio = Radiobutton(self.window, text="Yes", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="1")
         self.exposure_choice1_radio.place(x=765, y=530)
 
@@ -204,13 +204,38 @@ class Register():
         self.exposure_choice3_radio.place(x=765, y=576)
 
         # button for submit entry
-        self.add_info_Button = tk.Button(self.window, text = "SUBMIT", fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
-        self.add_info_Button.place(x = 760, y = 645, width = 155, height = 55)
+        self.submit_Button = tk.Button(self.window, text = "SUBMIT", fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
+        self.submit_Button.place(x = 760, y = 645, width = 155, height = 55)
 
         # button for clear entry
-        self.add_info_Button = tk.Button(self.window, text = "CLEAR", fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
-        self.add_info_Button.place(x = 920, y = 645, width = 155, height = 55)
+        self.clear_Button = tk.Button(self.window, text = "CLEAR", command = self.clear_info, fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
+        self.clear_Button.place(x = 920, y = 645, width = 155, height = 55)
     
+    def clear_info(self):
+        self.name_textbox.delete(0, END)
+        self.age_textbox.delete(0, END)
+        self.birthday_textbox.delete(0, END)
+        self.email_address_textbox.delete(0, END)
+        self.contact_number_textbox.delete(0, END)
+        self.gender_textbox.delete(0, END)
+        self.address_textbox.delete(0, END)
+        self.cp_name_textbox.delete(0, END)
+        self.cp_contact_number_textbox.delete(0, END)
+        self.cp_email_address_textbox.delete(0, END)
+        self.relationship_to_cp_textbox.delete(0, END)
+        self.vaccinated_choice.set(None)
+        self.fever_checkbox.deselect()
+        self.cough_checkbox.deselect()
+        self.colds_checkbox.deselect()
+        self.sore_threat_checkbox.deselect()
+        self.muscle_pain_checkbox.deselect()
+        self.headache_checkbox.deselect()
+        self.shortness_of_breath_checkbox.deselect()
+        self.fatigue_checkbox.deselect()
+        self.loss_of_taste_checkbox.deselect()
+        self.loss_of_smell_checkbox.deselect()
+        self.exposure_choice.set(None)
+
     def run(self):
         self.window.mainloop()
 
