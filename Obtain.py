@@ -20,79 +20,110 @@ class Register():
         red_frame.place(x=0, y=0, relwidth=0.4, relheight=1, anchor="nw")
         white_frame.place(relx=0.2, y=0, relwidth=0.8, relheight=1, anchor="nw")
         
-        self.app_title = tk.Label(self.window, text = "Sign Up", fg = "black", bg = "white", font=("Helvetica",24,"bold"))
-        self.app_title.place(x = 265, y = 17, width = 120, height = 40)
+        self.app_title = tk.Label(self.window, text = "PUP", fg = "#0818A8", bg = "white", font=("Arial",30,"bold"))
+        self.app_title.place(x = 603, y = 10, width = 100, height = 90)
 
-        self.app_title = tk.Label(self.window, text = "Respondent Details", fg = "#494F55", bg = "white", font=("Helvetica",15,"bold"))
-        self.app_title.place(x = 240, y = 87, width = 240, height = 22)
+        self.app_title = tk.Label(self.window, text = "TRACE", fg = "red", bg = "white", font=("Arial",30,"bold"))
+        self.app_title.place(x = 692, y = 10, width = 140, height = 90)
+
+        self.app_title = tk.Label(self.window, text = "PUP CONTACT TRACING APP", fg = "gray", bg = "white", font=("Arial",11,"bold"))
+        self.app_title.place(x = 495, y = 68, width = 450, height = 22)
+
+        self.respondent_details = tk.Label(self.window, text = "Respondent Details", fg = "#494F55", bg = "white", font=("Helvetica",15,"bold"))
+        self.respondent_details.place(x = 290, y = 137, width = 240, height = 22)
 
         # get name Name
         self.name_label = tk.Label(self.window, text = "Name", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.name_label.place(x = 270, y = 125, width = 45, height = 20)
+        self.name_label.place(x = 320, y = 175, width = 45, height = 20)
 
         # textbox for Name
         self.name_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.name_textbox.place(x = 273 , y = 145, width = 230, height = 30)
+        self.name_textbox.place(x = 323 , y = 195, width = 230, height = 30)
         # self.name_suffix_textbox.insert(0, " Suffix (e.g. Sr., Jr., III)")   
 
         # get Age 
         self.age_label = tk.Label(self.window, text = "Age", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.age_label.place(x = 270, y = 190, width = 36, height = 20)
+        self.age_label.place(x = 320, y = 240, width = 36, height = 20)
 
         # textbox for Age
         self.age_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.age_textbox.place(x = 273 , y = 210, width = 230, height = 30)
+        self.age_textbox.place(x = 323 , y = 260, width = 230, height = 30)
 
         # get Birthday 
         self.birthday_label = tk.Label(self.window, text = "Birthday", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.birthday_label.place(x = 270, y = 255, width = 65, height = 20)
+        self.birthday_label.place(x = 320, y = 305, width = 65, height = 20)
 
         # textbox for Birthday
         self.birthday_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.birthday_textbox.place(x = 273 , y = 275, width = 230, height = 30)
+        self.birthday_textbox.place(x = 323 , y = 325, width = 230, height = 30)
 
         # get email address 
         self.email_address_label = tk.Label(self.window, text = "Email Address", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.email_address_label.place(x = 517, y = 125, width = 130, height = 20)
+        self.email_address_label.place(x = 567, y = 175, width = 130, height = 20)
 
         # textbox for email address
         self.email_address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.email_address_textbox .place(x = 530, y = 145, width = 230, height = 30)
+        self.email_address_textbox .place(x = 580, y = 195, width = 230, height = 30)
 
         # get contact number
         self.contact_number_label = tk.Label(self.window, text = "Contact Number", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.contact_number_label.place(x = 522, y = 190, width = 130, height = 20)
+        self.contact_number_label.place(x = 572, y = 240, width = 130, height = 20)
 
         # textbox for contact number
         self.contact_number_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.contact_number_textbox .place(x = 530, y = 210, width = 230, height = 30)
+        self.contact_number_textbox .place(x = 580, y = 260, width = 230, height = 30)
         
         # get Gender 
         self.gender_label = tk.Label(self.window, text = "Gender", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.gender_label.place(x = 525, y = 255, width = 60, height = 20)
+        self.gender_label.place(x = 575, y = 305, width = 60, height = 20)
 
         # textbox for Gender
         self.gender_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.gender_textbox.place(x = 530 , y = 275, width = 230, height = 30)
+        self.gender_textbox.place(x = 580 , y = 325, width = 230, height = 30)
 
         # get address
         self.address_label = tk.Label(self.window, text = "Address", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.address_label.place(x = 272, y = 320, width = 65, height = 20)
+        self.address_label.place(x = 322, y = 370, width = 65, height = 20)
 
         # textbox for address
         self.address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.address_textbox .place(x = 273, y = 340  , width = 488, height = 30)
-
+        self.address_textbox .place(x = 323, y = 390, width = 488, height = 30)
         
+        # contact person 
+        self.contact_person_details = tk.Label(self.window, text = "Contact Person Details", fg = "#494F55", bg = "white", font=("Helvetica",15,"bold"))
+        self.contact_person_details.place(x = 850, y = 137, width = 240, height = 22)
+        
+        # get name of contact person
+        self.name_label = tk.Label(self.window, text = "Name", fg = "black", bg = "white", font=("Trajan Pro",13))
+        self.name_label.place(x = 865, y = 175, width = 45, height = 20)
+        
+        # textbox for name of contact person
+        self.cp_name_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
+        self.cp_name_textbox.place(x = 868 , y = 195, width = 230, height = 30)
 
-    # get name of contact person
-    # textbox for name of contact person
+        # get name of contact person
+        self.name_label = tk.Label(self.window, text = "Contact Number", fg = "black", bg = "white", font=("Trajan Pro",13))
+        self.name_label.place(x = 865, y = 240, width = 120, height = 20)
+        
+        # textbox for name of contact person
+        self.cp_contact_number_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
+        self.cp_contact_number_textbox.place(x = 868 , y = 260, width = 230, height = 30)
 
-    # get email address of contact person
-    # textbox for email address of contact person
+        # get email address of contact person
+        self.cp_email_address_label = tk.Label(self.window, text = "Email Address", fg = "black", bg = "white", font=("Trajan Pro",13))
+        self.cp_email_address_label.place(x = 865, y = 305, width = 110, height = 20)
 
-    # get relationship to contact person
-    # textbox for relationship to contact person
+        # textbox for email address of contact person
+        self.cp_email_address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
+        self.cp_email_address_textbox.place(x = 868 , y = 325, width = 230, height = 30)
+
+        # get relationship to contact person
+        self.cp_email_address_label = tk.Label(self.window, text = "Relationship to Contact Person", fg = "black", bg = "white", font=("Trajan Pro",13))
+        self.cp_email_address_label.place(x = 867, y = 370, width = 225, height = 20)
+
+        # textbox for relationship to contact person
+        self.cp_email_address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
+        self.cp_email_address_textbox.place(x = 868 , y = 390, width = 230, height = 30)
 
     # ask question "Have you been vaccinated for COVID-19?"
     # radio button for choices
