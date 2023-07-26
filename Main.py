@@ -9,7 +9,6 @@
 
 # import necessary modules to be used
 from tkinter import *
-from tkinter import ttk
 import tkinter as tk
 from PIL import ImageTk, Image
 # import classes (soon)
