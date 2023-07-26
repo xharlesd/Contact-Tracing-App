@@ -216,7 +216,9 @@ class Register():
             "None of the above": self.None_of_the_above.get()
         }
         symptom = ", ".join(key for key, value in symptoms.items() if value)
-
+        ref_number = random.randint(1000, 9999)
+        reference_number = str(ref_number)
+        
         if name == '' or age == '' or birthday == '' or email_address == '' or contact_number == '' or gender == '' or address == '' or cp_name == '' or cp_contact_number == '' or cp_email_address == '' or relationship_to_cp == '' or vaccinated == '' or exposure == '':
             messagebox.showerror("Error", "Please fill up all the required fields.")
             return
@@ -228,14 +230,14 @@ class Register():
         if data_privacy == False:
             messagebox.showwarning("Data Privacy Consent", "You must agree to Privacy Notice and Data Privacy Consent.")
             return
+            
         else:
             # Create table
             with open('data_list.csv', 'a', newline='') as file:   
                 data_input = csv.writer(file)
-                data_input.writerow([name, age, birthday,gender, email_address, contact_number, address, cp_name, cp_contact_number, cp_email_address, relationship_to_cp, vaccinated, symptom, exposure])
+                data_input.writerow([name, age, birthday,gender, email_address, contact_number, address, cp_name, cp_contact_number, cp_email_address, relationship_to_cp, vaccinated, symptom, exposure, reference_number])
 
-            ref_number = random.randint(1000, 9999)
-            reference_number = str(ref_number)
+
             messagebox.showinfo("Registration Successful", f"Your Data has been registered successfully. Your reference number is {reference_number}")
                 
     def clear_info(self):

@@ -36,8 +36,26 @@ class Search():
         self.search_textbox.place(x = 597 , y = 168, width = 235, height = 30)
         
         # define search function
-        self.search_Button = tk.Button(self.window, text = "SEARCH", fg = "white", bg = "#008080", font=("Century Gothic",12,"bold"))
+        self.search_Button = tk.Button(self.window, text = "SEARCH", command=self.search_data, fg = "white", bg = "#008080", font=("Century Gothic",12,"bold"))
         self.search_Button.place(x = 843, y = 165, width = 71, height = 35)
+    
+    def search_data(self):
+        reference_number = self.search_textbox.get()
+        data_list = []
+        with open("data_list.csv", "r") as file:
+            data_read = csv.reader(file)
+            for row in data_read:
+                data_list.append(row)
+
+        data_found = None
+        for data in data_list:
+            if reference_number in data:
+                messagebox.showinfo("Ref No.", "Reference number found.")
+                data_found = data
+                break
+            
+            
+        if data_found:""""""
 
     def run(self):
         self.window.mainloop()
