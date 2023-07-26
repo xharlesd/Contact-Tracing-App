@@ -2,9 +2,10 @@
 
 # import necessary modules to be used
 from tkinter import *
+from tkinter import messagebox
 from tkinter import ttk
-import tkinter as tk
-import sqlite3
+import tkinter as tk 
+import sqlite3 as db
 
 # class add entry
 class Register():
@@ -44,8 +45,8 @@ class Register():
         self.age_label = tk.Label(self.window, text = "Age", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.age_label.place(x = 320, y = 240, width = 36, height = 20)
 
-        self.age_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.age_textbox.place(x = 323 , y = 260, width = 230, height = 30)
+        self.age_spinbox = tk.Spinbox(self.window, from_= 0, to = 150, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
+        self.age_spinbox.place(x = 323 , y = 260, width = 230, height = 30)
 
         self.birthday_label = tk.Label(self.window, text = "Birthday", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.birthday_label.place(x = 320, y = 305, width = 65, height = 20)
@@ -140,44 +141,44 @@ class Register():
         self.ques2_label = tk.Label(self.window, text = "2. Are you experiencing any symptoms such as:", fg = "black", bg = "white", font=("Segoe UI",13))
         self.ques2_label.place(x = 320, y = 600, width = 358, height = 20)
 
-        self.fever_symptom = StringVar(value = 0)
-        self.fever_checkbox = tk.Checkbutton(self.window, text="Fever", variable = self.fever_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.fever_symptom = StringVar(value ="No")
+        self.fever_checkbox = tk.Checkbutton(self.window, text="Fever", variable = self.fever_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.fever_checkbox.place(x=340, y=622)
 
-        self.cough_symptom = StringVar(value = 0)
-        self.cough_checkbox = tk.Checkbutton(self.window, text="Cough", variable = self.cough_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.cough_symptom = StringVar(value = "No")
+        self.cough_checkbox = tk.Checkbutton(self.window, text="Cough", variable = self.cough_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.cough_checkbox.place(x=340, y=642)
 
-        self.colds_symptom = StringVar(value = 0)
-        self.colds_checkbox = tk.Checkbutton(self.window, text="Colds", variable = self.colds_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.colds_symptom = StringVar(value = "No")
+        self.colds_checkbox = tk.Checkbutton(self.window, text="Colds", variable = self.colds_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.colds_checkbox.place(x=340, y=662)
 
-        self.sore_throat_symptom = StringVar(value = 0)
-        self.sore_throat_checkbox = tk.Checkbutton(self.window, text="Sore throat", variable = self.sore_throat_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.sore_throat_symptom = StringVar(value = "No")
+        self.sore_throat_checkbox = tk.Checkbutton(self.window, text="Sore throat", variable = self.sore_throat_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.sore_throat_checkbox.place(x=340, y=682)
 
-        self.muscle_pain_symptom = StringVar(value = 0)
-        self.muscle_pain_checkbox = tk.Checkbutton(self.window, text="Muscle/body pains", variable = self.muscle_pain_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.muscle_pain_symptom = StringVar(value = "No")
+        self.muscle_pain_checkbox = tk.Checkbutton(self.window, text="Muscle/body pains", variable = self.muscle_pain_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.muscle_pain_checkbox.place(x=340, y=702)
 
-        self.headache_symptom = StringVar(value = 0)
-        self.headache_checkbox = tk.Checkbutton(self.window, text="Headache", variable = self.headache_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.headache_symptom = StringVar(value = "No")
+        self.headache_checkbox = tk.Checkbutton(self.window, text="Headache", variable = self.headache_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.headache_checkbox.place(x=490, y=622)
 
-        self.shortness_of_breath_symptom = StringVar(value = 0)
-        self.shortness_of_breath_checkbox = tk.Checkbutton(self.window, text="Shortness of Breath", variable = self.shortness_of_breath_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.shortness_of_breath_symptom = StringVar(value = "No")
+        self.shortness_of_breath_checkbox = tk.Checkbutton(self.window, text="Shortness of Breath", variable = self.shortness_of_breath_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.shortness_of_breath_checkbox.place(x=490, y=642)
 
-        self.fatigue_symptom = StringVar(value = 0)
-        self.fatigue_checkbox = tk.Checkbutton(self.window, text="Fatigue", variable = self.fatigue_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.fatigue_symptom = StringVar(value = "No")
+        self.fatigue_checkbox = tk.Checkbutton(self.window, text="Fatigue", variable = self.fatigue_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.fatigue_checkbox.place(x=490, y=662)
 
-        self.loss_of_taste_symptom = StringVar(value = 0)
-        self.loss_of_taste_checkbox = tk.Checkbutton(self.window, text="Lost of taste", variable = self.loss_of_taste_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.loss_of_taste_symptom = StringVar(value = "No")
+        self.loss_of_taste_checkbox = tk.Checkbutton(self.window, text="Lost of taste", variable = self.loss_of_taste_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.loss_of_taste_checkbox.place(x=490, y=682)
 
-        self.loss_of_smell_symptom = StringVar(value = 0)
-        self.loss_of_smell_checkbox = tk.Checkbutton(self.window, text="Loss of smell", variable = self.smell_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = 1, offvalue = 0)
+        self.loss_of_smell_symptom = StringVar(value = "No")
+        self.loss_of_smell_checkbox = tk.Checkbutton(self.window, text="Loss of smell", variable = self.loss_of_smell_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
         self.loss_of_smell_checkbox.place(x=490, y=702)
 
         # ask question "Have you had exposure to a probable or confirmed case in the last 14 days?"
@@ -197,41 +198,58 @@ class Register():
         self.exposure_choice3_radio = tk.Radiobutton(self.window, text="Uncertain", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="3")
         self.exposure_choice3_radio.place(x=765, y=576)
 
+        self.data_privacy = StringVar(value = "0")
+        self.data_privacy_checkbox = tk.Checkbutton(self.window, text = "I agree to Data Privacy Consent", font=("MS Sans Serif", 11), bg = "white", variable=self.data_privacy, onvalue = "1", offvalue = "0")
+        self.data_privacy_checkbox.place(x=760, y=630)
+
         # button for submit entry
-        self.submit_Button = tk.Button(self.window, text = "SUBMIT", fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
-        self.submit_Button.place(x = 760, y = 645, width = 155, height = 55)
+        self.submit_Button = tk.Button(self.window, text = "SUBMIT", command = self.submit_data, fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
+        self.submit_Button.place(x = 760, y = 665, width = 155, height = 55)
 
         # button for clear entry
         self.clear_Button = tk.Button(self.window, text = "CLEAR", command = self.clear_info, fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
-        self.clear_Button.place(x = 920, y = 645, width = 155, height = 55)
-    
-    def submit_data(self):
-        name = self.name_textbox.get()
-        age = self.age_textbox.get()
-        birthday = self.birthday_textbox.get()
-        email_address = self.email_address_textbox.get()
-        contact_number = self.contact_number_textbox.get()
-        gender_choice = self.gender_choice.get()
-        address = self.address_textbox.get()
-        cp_name = self.cp_name_textbox.get()
-        cp_contact_number = self.cp_contact_number_textbox.get()
-        cp_email_address = self.cp_email_address_textbox.get()
-        relationship_to_cp = self.relationship_to_cp_textbox.get()
-        vaccinated = self.vaccinated_choice.get()
-        symptom_fever = self.fever_symptom.get()
-        symptom_cough = self.cough_symptom.get()
-        symptom_colds = self.colds_symptom.get()
-        symptom_sore_throat = self.sore_throat_symptom.get()
-        symptom_shortness_of_breath = self.shortness_of_breath_symptom.get()
-        symptom_fatigue = self.fatigue_symptom.get()
-        symptom_loss_of_taste = self.loss_of_taste_symptom.get()
-        symptom_loss_of_smell = self.loss_of_smell_symptom.get()
-        symptom_exposure = self.exposure_choice.get()
+        self.clear_Button.place(x = 920, y = 665, width = 155, height = 55)
 
+    def submit_data(self):
+        data_privacy = self.data_privacy.get()
+
+        # respondent info
+        name = str(self.name_textbox.get())
+        age = str(self.age_spinbox.get())
+        birthday = str(self.birthday_textbox.get())
+        email_address = str(self.email_address_textbox.get())
+        contact_number = str(self.contact_number_textbox.get())
+        gender = str(self.gender_choice.get())
+        address = str(self.address_textbox.get())
+
+        # contact person info
+        cp_name = str(self.cp_name_textbox.get())
+        cp_contact_number = str(self.cp_contact_number_textbox.get())
+        cp_email_address = str(self.cp_email_address_textbox.get())
+        relationship_to_cp = str(self.relationship_to_cp_textbox.get())
+
+        # health declaration
+        vaccinated = str(self.vaccinated_choice.get())
+        symptom_fever = str(self.fever_symptom.get())
+        symptom_cough = str(self.cough_symptom.get())
+        symptom_colds = str(self.colds_symptom.get())
+        symptom_sore_throat = str(self.sore_throat_symptom.get())
+        symptom_shortness_of_breath = str(self.shortness_of_breath_symptom.get())
+        symptom_fatigue = str(self.fatigue_symptom.get())
+        symptom_loss_of_taste = str(self.loss_of_taste_symptom.get())
+        symptom_loss_of_smell = str(self.loss_of_smell_symptom.get())
+        exposure = str(self.exposure_choice.get())
+
+        # Create table
+        conn = db.connect('data.db')
+        cur  = conn.cursor()
+        cur.execute("INSERT INTO Data('"+name+"', '"+age+"', '"+birthday+"', '"+email_address+"', '"+contact_number+"', '"+gender+"', '"+address+"', '"+cp_name+"', '"+cp_contact_number+"', '"+cp_email_address+"', '"+relationship_to_cp+"', '"+vaccinated+"', '"+symptom_fever+"', '"+symptom_cough+"', '"+symptom_colds+"', '"+symptom_sore_throat+"', '"+symptom_shortness_of_breath+"', '"+symptom_fatigue+"', '"+symptom_loss_of_taste+"', '"+symptom_loss_of_smell+"', '"+exposure+",'"+data_privacy+"')")
+        conn.commit()
+        conn.close()
 
     def clear_info(self):
         self.name_textbox.delete(0, END)
-        self.age_textbox.delete(0, END)
+        self.age_spinbox.delete(0, END)
         self.birthday_textbox.delete(0, END)
         self.email_address_textbox.delete(0, END)
         self.contact_number_textbox.delete(0, END)
@@ -253,6 +271,7 @@ class Register():
         self.loss_of_taste_checkbox.deselect()
         self.loss_of_smell_checkbox.deselect()
         self.exposure_choice.set(None)
+        self.data_privacy_checkbox.deselect()
 
     def run(self):
         self.window.mainloop()
