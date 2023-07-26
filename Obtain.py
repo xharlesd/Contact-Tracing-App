@@ -5,7 +5,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 import tkinter as tk 
-import sqlite3 as db
+import csv
 
 # class add entry
 class Register():
@@ -69,12 +69,12 @@ class Register():
         self.gender_label = tk.Label(self.window, text = "Gender", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.gender_label.place(x = 575, y = 305, width = 60, height = 20)
 
-        self.gender_choice = tk.IntVar()
+        self.gender_choice = tk.StringVar()
 
-        self.gender_choice1_radio = tk.Radiobutton(self.window, text="Male", font=("MS Sans Serif", 12), bg = "white", variable=self.gender_choice, value="1")
+        self.gender_choice1_radio = tk.Radiobutton(self.window, text="Male", font=("MS Sans Serif", 12), bg = "white", variable=self.gender_choice, value="Male")
         self.gender_choice1_radio.place(x=600, y=325)
 
-        self.gender_choice2_radio = tk.Radiobutton(self.window, text="Female", font=("MS Sans Serif", 12), bg = "white", variable=self.gender_choice, value="2")
+        self.gender_choice2_radio = tk.Radiobutton(self.window, text="Female", font=("MS Sans Serif", 12), bg = "white", variable=self.gender_choice, value="Female")
         self.gender_choice2_radio.place(x=680, y=325)
 
 
@@ -120,21 +120,21 @@ class Register():
         self.ques1_label = tk.Label(self.window, text = "1. Have you been vaccinated for COVID-19?", fg = "black", bg = "white", font=("Segoe UI",13))
         self.ques1_label.place(x = 320, y = 485, width = 335, height = 20)
         
-        self.vaccinated_choice = tk.IntVar()
+        self.vaccinated_choice = tk.StringVar()
 
-        self.vaccinated_choice1_radio = tk.Radiobutton(self.window, text="Not Yet", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="1")
+        self.vaccinated_choice1_radio = tk.Radiobutton(self.window, text="Not Yet", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="Not yet vaccinated")
         self.vaccinated_choice1_radio.place(x=340, y=507)
 
-        self.vaccinated_choice2_radio = tk.Radiobutton(self.window, text="1st Dose", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="2")
+        self.vaccinated_choice2_radio = tk.Radiobutton(self.window, text="1st Dose", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="1st dose")
         self.vaccinated_choice2_radio.place(x=340, y=530)
 
-        self.vaccinated_choice3_radio = tk.Radiobutton(self.window, text="2nd Dose (Fully Vaccinated)", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="3")
+        self.vaccinated_choice3_radio = tk.Radiobutton(self.window, text="2nd Dose (Fully Vaccinated)", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="2nd dose")
         self.vaccinated_choice3_radio.place(x=340, y=553)
 
-        self.vaccinated_choice4_radio = tk.Radiobutton(self.window, text="1st Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="4")
+        self.vaccinated_choice4_radio = tk.Radiobutton(self.window, text="1st Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="1st booster shot")
         self.vaccinated_choice4_radio.place(x=490, y=507)
 
-        self.vaccinated_choice5_radio = tk.Radiobutton(self.window, text="2nd Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="5")
+        self.vaccinated_choice5_radio = tk.Radiobutton(self.window, text="2nd Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="2nd booster shot")
         self.vaccinated_choice5_radio.place(x=490, y=530)
 
         # ask question "Are you experiencing any symptoms in the past 7 days such as:"
@@ -188,14 +188,14 @@ class Register():
         self.ques3_label = tk.Label(self.window, text = "confirmed case in the last 14 days?", fg = "black", bg = "white", font=("Segoe UI",13))
         self.ques3_label.place(x = 682, y = 505, width = 420, height = 20)
 
-        self.exposure_choice = tk.IntVar()
-        self.exposure_choice1_radio = tk.Radiobutton(self.window, text="Yes", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="1")
+        self.exposure_choice = tk.StringVar()
+        self.exposure_choice1_radio = tk.Radiobutton(self.window, text="Yes", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="Yes")
         self.exposure_choice1_radio.place(x=765, y=530)
 
-        self.exposure_choice2_radio = tk.Radiobutton(self.window, text="No", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="2")
+        self.exposure_choice2_radio = tk.Radiobutton(self.window, text="No", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="No")
         self.exposure_choice2_radio.place(x=765, y=553)
 
-        self.exposure_choice3_radio = tk.Radiobutton(self.window, text="Uncertain", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="3")
+        self.exposure_choice3_radio = tk.Radiobutton(self.window, text="Uncertain", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="Uncertain")
         self.exposure_choice3_radio.place(x=765, y=576)
 
         self.data_privacy = StringVar(value = "0")
@@ -211,41 +211,33 @@ class Register():
         self.clear_Button.place(x = 920, y = 665, width = 155, height = 55)
 
     def submit_data(self):
-        data_privacy = self.data_privacy.get()
 
         # respondent info
-        name = str(self.name_textbox.get())
-        age = str(self.age_spinbox.get())
-        birthday = str(self.birthday_textbox.get())
-        email_address = str(self.email_address_textbox.get())
-        contact_number = str(self.contact_number_textbox.get())
-        gender = str(self.gender_choice.get())
-        address = str(self.address_textbox.get())
+        name = self.name_textbox.get()
+        age = self.age_spinbox.get()
+        birthday = self.birthday_textbox.get()
+        email_address = self.email_address_textbox.get()
+        contact_number = self.contact_number_textbox.get()
+        gender = self.gender_choice.get()
+        address = self.address_textbox.get()
 
         # contact person info
-        cp_name = str(self.cp_name_textbox.get())
-        cp_contact_number = str(self.cp_contact_number_textbox.get())
-        cp_email_address = str(self.cp_email_address_textbox.get())
-        relationship_to_cp = str(self.relationship_to_cp_textbox.get())
+        cp_name = self.cp_name_textbox.get()
+        cp_contact_number = self.cp_contact_number_textbox.get()
+        cp_email_address = self.cp_email_address_textbox.get()
+        relationship_to_cp = self.relationship_to_cp_textbox.get()
 
         # health declaration
-        vaccinated = str(self.vaccinated_choice.get())
-        symptom_fever = str(self.fever_symptom.get())
-        symptom_cough = str(self.cough_symptom.get())
-        symptom_colds = str(self.colds_symptom.get())
-        symptom_sore_throat = str(self.sore_throat_symptom.get())
-        symptom_shortness_of_breath = str(self.shortness_of_breath_symptom.get())
-        symptom_fatigue = str(self.fatigue_symptom.get())
-        symptom_loss_of_taste = str(self.loss_of_taste_symptom.get())
-        symptom_loss_of_smell = str(self.loss_of_smell_symptom.get())
-        exposure = str(self.exposure_choice.get())
+        vaccinated = self.vaccinated_choice.get()
+        exposure = self.exposure_choice.get()
+        data_privacy = self.data_privacy.get()
 
         # Create table
-        conn = db.connect('data.db')
-        cur  = conn.cursor()
-        cur.execute("INSERT INTO Data('"+name+"', '"+age+"', '"+birthday+"', '"+email_address+"', '"+contact_number+"', '"+gender+"', '"+address+"', '"+cp_name+"', '"+cp_contact_number+"', '"+cp_email_address+"', '"+relationship_to_cp+"', '"+vaccinated+"', '"+symptom_fever+"', '"+symptom_cough+"', '"+symptom_colds+"', '"+symptom_sore_throat+"', '"+symptom_shortness_of_breath+"', '"+symptom_fatigue+"', '"+symptom_loss_of_taste+"', '"+symptom_loss_of_smell+"', '"+exposure+",'"+data_privacy+"')")
-        conn.commit()
-        conn.close()
+        with open('data_entry.csv', 'a', newline='') as file:
+            data_input = csv.writer(file)
+            data_input.writerow([name, age, birthday, email_address, contact_number, gender, address,
+                             cp_name, cp_contact_number, cp_email_address, relationship_to_cp, 
+                             vaccinated, exposure])
 
     def clear_info(self):
         self.name_textbox.delete(0, END)
