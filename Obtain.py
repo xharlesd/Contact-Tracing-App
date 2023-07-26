@@ -69,7 +69,7 @@ class Register():
         self.gender_label = tk.Label(self.window, text = "Gender", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.gender_label.place(x = 575, y = 305, width = 60, height = 20)
 
-        self.gender_choice = tk.StringVar()
+        self.gender_choice = tk.StringVar(value = 0)
 
         self.gender_choice1_radio = tk.Radiobutton(self.window, text="Male", font=("MS Sans Serif", 12), bg = "white", variable=self.gender_choice, value="Male")
         self.gender_choice1_radio.place(x=600, y=325)
@@ -120,7 +120,7 @@ class Register():
         self.ques1_label = tk.Label(self.window, text = "1. Have you been vaccinated for COVID-19?", fg = "black", bg = "white", font=("Segoe UI",13))
         self.ques1_label.place(x = 320, y = 485, width = 335, height = 20)
         
-        self.vaccinated_choice = tk.StringVar()
+        self.vaccinated_choice = tk.StringVar(value = 0)
 
         self.vaccinated_choice1_radio = tk.Radiobutton(self.window, text="Not Yet", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="Not yet vaccinated")
         self.vaccinated_choice1_radio.place(x=340, y=507)
@@ -188,7 +188,7 @@ class Register():
         self.ques3_label = tk.Label(self.window, text = "confirmed case in the last 14 days?", fg = "black", bg = "white", font=("Segoe UI",13))
         self.ques3_label.place(x = 682, y = 505, width = 420, height = 20)
 
-        self.exposure_choice = tk.StringVar()
+        self.exposure_choice = tk.StringVar(value = 0)
         self.exposure_choice1_radio = tk.Radiobutton(self.window, text="Yes", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="Yes")
         self.exposure_choice1_radio.place(x=765, y=530)
 
@@ -232,12 +232,22 @@ class Register():
         exposure = self.exposure_choice.get()
         data_privacy = self.data_privacy.get()
 
+        symptoms = {
+            "cough": self.cough_symptom.get(),
+            "colds": self.colds_symptom.get(),
+            "sore_throat": self.sore_throat_symptom.get(),
+            "shortness_of_breath": self.shortness_of_breath_symptom.get(),
+            "fatigue": self.fatigue_symptom.get(),
+            "loss_of_taste": self.loss_of_taste_symptom.get(),
+            "loss_of_smell": self.loss_of_smell_symptom.get(),
+        }
+
         # Create table
         with open('data_entry.csv', 'a', newline='') as file:
             data_input = csv.writer(file)
             data_input.writerow([name, age, birthday, email_address, contact_number, gender, address,
                              cp_name, cp_contact_number, cp_email_address, relationship_to_cp, 
-                             vaccinated, exposure])
+                             vaccinated, symptoms, exposure])
 
     def clear_info(self):
         self.name_textbox.delete(0, END)
