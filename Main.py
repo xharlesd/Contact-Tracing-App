@@ -11,6 +11,7 @@
 from tkinter import *
 from tkinter import ttk
 import tkinter as tk
+from PIL import ImageTk, Image
 # import classes (soon)
 from Obtain import Register
 # App Class
@@ -21,28 +22,34 @@ class ContactTracing():
         self.window = tk.Tk()
         self.window.title("Contact Tracing App")  # program title
         self.window.geometry('1190x820')  # tkinter frame window
-    
-        red_frame = tk.Frame(bd=0, highlightthickness=0, background="#800000")
-        white_frame = tk.Frame(bd=0, highlightthickness=0, background="white")
-        red_frame.place(x=0, y=0, relwidth=0.4, relheight=1, anchor="nw")
-        white_frame.place(relx=0.3, y=0, relwidth=0.7, relheight=1, anchor="nw")
+       
+        original_image = Image.open("Puppic.png")
+        resized_image = original_image.resize((420, 950))  
+        background_image = ImageTk.PhotoImage(resized_image)
 
-        app_title = tk.Label(self.window, text = "PUP", fg = "#0818A8", bg = "white", font=("Arial",55,"bold"))
-        app_title.place(x = 530, y = 120, width = 250, height = 90)
+        # Create a canvas to display the background image
+        self.canvas = tk.Canvas(self.window, width=400, height=900)
+        self.canvas.pack(side=LEFT)
+        self.canvas.create_image(0, 0, image=background_image, anchor="nw")
 
-        app_title = tk.Label(self.window, text = "TRACE", fg = "red", bg = "white", font=("Arial",55,"bold"))
-        app_title.place(x = 730, y = 120, width = 250, height = 90)
+        self.window.config(bg = "#FFFFFF")
+        
+        self.app_title = tk.Label(self.window, text = "PUP", fg = "#0818A8", bg = "white", font=("Arial",55,"bold"))
+        self.app_title.place(x = 560, y = 120, width = 250, height = 90)
 
-        app_title = tk.Label(self.window, text = "PUP CONTACT TRACING APP", fg = "gray", bg = "white", font=("Arial",20,"bold"))
-        app_title.place(x = 555, y = 195, width = 450, height = 22)
+        self.app_title = tk.Label(self.window, text = "TRACE", fg = "red", bg = "white", font=("Arial",55,"bold"))
+        self.app_title.place(x = 760, y = 120, width = 250, height = 90)
+
+        self.app_title = tk.Label(self.window, text = "PUP CONTACT TRACING APP", fg = "gray", bg = "white", font=("Arial",20,"bold"))
+        self.app_title.place(x = 585, y = 195, width = 450, height = 22)
 
         # button for add entry
-        add_info_Button = tk.Button(self.window, text = "REGISTER", command = self.register_window, fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"))
-        add_info_Button.place(x = 650, y = 340, width = 250, height = 90)
+        self.register_Button = tk.Button(self.window, text = "REGISTER", command = self.register_window, fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"))
+        self.register_Button.place(x = 670, y = 340, width = 250, height = 90)
         
         # button for search entry
-        search_info_Button = tk.Button(self.window, text = "SEARCH", fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"), )
-        search_info_Button.place(x = 650, y = 450, width = 250, height = 90)
+        self.search_Button = tk.Button(self.window, text = "SEARCH", fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"), )
+        self.search_Button.place(x = 670, y = 450, width = 250, height = 90)
 
         self.window.mainloop()
 

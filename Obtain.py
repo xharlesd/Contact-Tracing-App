@@ -135,19 +135,19 @@ class Register():
         
         # radio buttons for choices
         self.vaccinated_choice = tk.IntVar()
-        self.vaccinated_choice1_radio = Radiobutton(self.window, text="Not Yet", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="1")
+        self.vaccinated_choice1_radio = tk.Radiobutton(self.window, text="Not Yet", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="1")
         self.vaccinated_choice1_radio.place(x=340, y=507)
 
-        self.vaccinated_choice2_radio = Radiobutton(self.window, text="1st Dose", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="2")
+        self.vaccinated_choice2_radio = tk.Radiobutton(self.window, text="1st Dose", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="2")
         self.vaccinated_choice2_radio.place(x=340, y=530)
 
-        self.vaccinated_choice3_radio = Radiobutton(self.window, text="2nd Dose (Fully Vaccinated)", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="3")
+        self.vaccinated_choice3_radio = tk.Radiobutton(self.window, text="2nd Dose (Fully Vaccinated)", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="3")
         self.vaccinated_choice3_radio.place(x=340, y=553)
 
-        self.vaccinated_choice4_radio = Radiobutton(self.window, text="1st Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="4")
+        self.vaccinated_choice4_radio = tk.Radiobutton(self.window, text="1st Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="4")
         self.vaccinated_choice4_radio.place(x=490, y=507)
 
-        self.vaccinated_choice5_radio = Radiobutton(self.window, text="2nd Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="5")
+        self.vaccinated_choice5_radio = tk.Radiobutton(self.window, text="2nd Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="5")
         self.vaccinated_choice5_radio.place(x=490, y=530)
 
         # ask question "Are you experiencing any symptoms in the past 7 days such as:"
@@ -194,13 +194,13 @@ class Register():
         
         # radio buttons for choices
         self.exposure_choice = tk.IntVar()
-        self.exposure_choice1_radio = Radiobutton(self.window, text="Yes", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="1")
+        self.exposure_choice1_radio = tk.Radiobutton(self.window, text="Yes", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="1")
         self.exposure_choice1_radio.place(x=765, y=530)
 
-        self.exposure_choice2_radio = Radiobutton(self.window, text="No", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="2")
+        self.exposure_choice2_radio = tk.Radiobutton(self.window, text="No", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="2")
         self.exposure_choice2_radio.place(x=765, y=553)
 
-        self.exposure_choice3_radio = Radiobutton(self.window, text="Uncertain", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="3")
+        self.exposure_choice3_radio = tk.Radiobutton(self.window, text="Uncertain", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="3")
         self.exposure_choice3_radio.place(x=765, y=576)
 
         # button for submit entry
