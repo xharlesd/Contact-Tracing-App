@@ -33,8 +33,11 @@ class Search():
         self.search_label = tk.Label(self.window, text = "Reference No.", fg = "#494F55", bg = "white", font=("Helvetica",16,"bold"))
         self.search_label.place(x = 435, y = 175, width = 170, height = 20)
         self.search_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
-        self.search_textbox.place(x = 595 , y = 168, width = 230, height = 30)
-    # define search function
+        self.search_textbox.place(x = 597 , y = 168, width = 235, height = 30)
+        
+        # define search function
+        self.search_Button = tk.Button(self.window, text = "SEARCH", fg = "white", bg = "#008080", font=("Century Gothic",12,"bold"))
+        self.search_Button.place(x = 843, y = 165, width = 71, height = 35)
 
     def run(self):
         self.window.mainloop()
