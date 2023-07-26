@@ -13,6 +13,7 @@ import tkinter as tk
 from PIL import ImageTk, Image
 # import classes (soon)
 from Obtain import Register
+from Search import Search
 # App Class
 class ContactTracing():
 
