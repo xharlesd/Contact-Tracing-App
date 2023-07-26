@@ -29,8 +29,11 @@ class Search():
         self.app_title = tk.Label(self.window, text = "PUP CONTACT TRACING APP", fg = "gray", bg = "white", font=("Arial",11,"bold"))
         self.app_title.place(x = 488, y = 76, width = 450, height = 22)
 
-    # text box for search
-
+        # text box for search
+        self.search_label = tk.Label(self.window, text = "Reference No.", fg = "#494F55", bg = "white", font=("Helvetica",16,"bold"))
+        self.search_label.place(x = 435, y = 175, width = 170, height = 20)
+        self.search_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
+        self.search_textbox.place(x = 595 , y = 168, width = 230, height = 30)
     # define search function
 
     def run(self):

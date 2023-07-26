@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk 
 import csv
+import random
 
 # class add entry
 class Register():
@@ -181,8 +182,9 @@ class Register():
         self.clear_Button = tk.Button(self.window, text = "CLEAR", command = self.clear_info, fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
         self.clear_Button.place(x = 920, y = 665, width = 155, height = 55)
 
-    def submit_data(self):
 
+    def submit_data(self):
+        
         # respondent info
         name = self.name_textbox.get()
         age = self.age_spinbox.get()
@@ -213,27 +215,28 @@ class Register():
             "loss of smell": self.loss_of_smell_symptom.get(),
             "None of the above": self.None_of_the_above.get()
         }
-
         symptom = ", ".join(key for key, value in symptoms.items() if value)
-        if symptom == '':
-            messagebox.showerror("Error", "Please select atleast one of the symptoms.")
-            return
 
         if name == '' or age == '' or birthday == '' or email_address == '' or contact_number == '' or gender == '' or address == '' or cp_name == '' or cp_contact_number == '' or cp_email_address == '' or relationship_to_cp == '' or vaccinated == '' or exposure == '':
             messagebox.showerror("Error", "Please fill up all the required fields.")
             return
+        
+        if symptom == '':
+            messagebox.showerror("Error", "Please select atleast one of the symptoms.")
+            return
+
         if data_privacy == False:
             messagebox.showwarning("Data Privacy Consent", "You must agree to Privacy Notice and Data Privacy Consent.")
             return
         else:
-            header = ["Name", "Age", "Birthday", "Email Address", "Contact Number", "Gender", "Address", "Contact Person Name", "C.P. Contact Number", "C.P. Email Address", "Relationship to C.P.", "Vaccination Status", "Symptoms", "Exposure"]
-            i_need_space = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
             # Create table
             with open('data_list.csv', 'a', newline='') as file:   
                 data_input = csv.writer(file)
-                data_input.writerow(header)
                 data_input.writerow([name, age, birthday,gender, email_address, contact_number, address, cp_name, cp_contact_number, cp_email_address, relationship_to_cp, vaccinated, symptom, exposure])
-                data_input.writerow(i_need_space)
+
+            ref_number = random.randint(1000, 9999)
+            reference_number = str(ref_number)
+            messagebox.showinfo("Registration Successful", f"Your Data has been registered successfully. Your reference number is {reference_number}")
                 
     def clear_info(self):
         self.name_textbox.delete(0, END)
