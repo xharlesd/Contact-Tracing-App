@@ -3,7 +3,6 @@
 # import necessary modules to be used
 from tkinter import *
 from tkinter import messagebox
-from tkinter import ttk
 import tkinter as tk 
 import csv
 
@@ -34,35 +33,29 @@ class Register():
         self.respondent_details = tk.Label(self.window, text = "Respondent Details", fg = "#494F55", bg = "white", font=("Helvetica",15,"bold"))
         self.respondent_details.place(x = 290, y = 143, width = 240, height = 22)
 
-        # get name Name
         self.name_label = tk.Label(self.window, text = "Name", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.name_label.place(x = 320, y = 175, width = 45, height = 20)
-
         self.name_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.name_textbox.place(x = 323 , y = 195, width = 230, height = 30)
         # self.name_suffix_textbox.insert(0, " Suffix (e.g. Sr., Jr., III)")   
 
         self.age_label = tk.Label(self.window, text = "Age", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.age_label.place(x = 320, y = 240, width = 36, height = 20)
-
         self.age_spinbox = tk.Spinbox(self.window, from_= 0, to = 150, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.age_spinbox.place(x = 323 , y = 260, width = 230, height = 30)
 
         self.birthday_label = tk.Label(self.window, text = "Birthday", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.birthday_label.place(x = 320, y = 305, width = 65, height = 20)
-
         self.birthday_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.birthday_textbox.place(x = 323 , y = 325, width = 230, height = 30)
 
         self.email_address_label = tk.Label(self.window, text = "Email Address", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.email_address_label.place(x = 567, y = 175, width = 130, height = 20)
-
         self.email_address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.email_address_textbox.place(x = 580, y = 195, width = 230, height = 30)
 
         self.contact_number_label = tk.Label(self.window, text = "Contact Number", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.contact_number_label.place(x = 572, y = 240, width = 130, height = 20)
-
         self.contact_number_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.contact_number_textbox.place(x = 580, y = 260, width = 230, height = 30)
 
@@ -70,17 +63,13 @@ class Register():
         self.gender_label.place(x = 575, y = 305, width = 60, height = 20)
 
         self.gender_choice = tk.StringVar(value = 0)
-
         self.gender_choice1_radio = tk.Radiobutton(self.window, text="Male", font=("MS Sans Serif", 12), bg = "white", variable=self.gender_choice, value="Male")
         self.gender_choice1_radio.place(x=600, y=325)
-
         self.gender_choice2_radio = tk.Radiobutton(self.window, text="Female", font=("MS Sans Serif", 12), bg = "white", variable=self.gender_choice, value="Female")
         self.gender_choice2_radio.place(x=680, y=325)
 
-
         self.address_label = tk.Label(self.window, text = "Address", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.address_label.place(x = 322, y = 370, width = 65, height = 20)
-
         self.address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.address_textbox.place(x = 323, y = 390, width = 488, height = 30)
         
@@ -90,25 +79,21 @@ class Register():
         
         self.cp_name_label = tk.Label(self.window, text = "Name", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.cp_name_label.place(x = 865, y = 175, width = 45, height = 20)
-
         self.cp_name_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.cp_name_textbox.place(x = 868 , y = 195, width = 230, height = 30)
 
-        self.name_label = tk.Label(self.window, text = "Contact Number", fg = "black", bg = "white", font=("Trajan Pro",13))
-        self.name_label.place(x = 865, y = 240, width = 120, height = 20)
-
+        self.cp_contact_number_label = tk.Label(self.window, text = "Contact Number", fg = "black", bg = "white", font=("Trajan Pro",13))
+        self.cp_contact_number_label.place(x = 865, y = 240, width = 120, height = 20)
         self.cp_contact_number_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.cp_contact_number_textbox.place(x = 868 , y = 260, width = 230, height = 30)
 
         self.cp_email_address_label = tk.Label(self.window, text = "Email Address", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.cp_email_address_label.place(x = 865, y = 305, width = 110, height = 20)
-
         self.cp_email_address_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.cp_email_address_textbox.place(x = 868 , y = 325, width = 230, height = 30)
 
         self.relationship_to_cp_label = tk.Label(self.window, text = "Relationship to Contact Person", fg = "black", bg = "white", font=("Trajan Pro",13))
         self.relationship_to_cp_label.place(x = 867, y = 370, width = 225, height = 20)
-
         self.relationship_to_cp_textbox = tk.Entry(self.window, font=("MS Sans Serif",12), fg = "black", bg = "#F5F5F5")
         self.relationship_to_cp_textbox.place(x = 868 , y = 390, width = 230, height = 30)
 
@@ -121,19 +106,14 @@ class Register():
         self.ques1_label.place(x = 320, y = 485, width = 335, height = 20)
         
         self.vaccinated_choice = tk.StringVar(value = 0)
-
         self.vaccinated_choice1_radio = tk.Radiobutton(self.window, text="Not Yet", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="Not yet vaccinated")
         self.vaccinated_choice1_radio.place(x=340, y=507)
-
         self.vaccinated_choice2_radio = tk.Radiobutton(self.window, text="1st Dose", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="1st dose")
         self.vaccinated_choice2_radio.place(x=340, y=530)
-
         self.vaccinated_choice3_radio = tk.Radiobutton(self.window, text="2nd Dose (Fully Vaccinated)", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="2nd dose")
         self.vaccinated_choice3_radio.place(x=340, y=553)
-
         self.vaccinated_choice4_radio = tk.Radiobutton(self.window, text="1st Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="1st booster shot")
         self.vaccinated_choice4_radio.place(x=490, y=507)
-
         self.vaccinated_choice5_radio = tk.Radiobutton(self.window, text="2nd Booster Shot", font=("MS Sans Serif", 11), bg = "white", variable=self.vaccinated_choice, value="2nd booster shot")
         self.vaccinated_choice5_radio.place(x=490, y=530)
 
@@ -141,65 +121,56 @@ class Register():
         self.ques2_label = tk.Label(self.window, text = "2. Are you experiencing any symptoms such as:", fg = "black", bg = "white", font=("Segoe UI",13))
         self.ques2_label.place(x = 320, y = 600, width = 358, height = 20)
 
-        self.fever_symptom = StringVar(value ="No")
-        self.fever_checkbox = tk.Checkbutton(self.window, text="Fever", variable = self.fever_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.fever_symptom = BooleanVar()
+        self.fever_checkbox = tk.Checkbutton(self.window, text="Fever", variable = self.fever_symptom, font=("MS Sans Serif", 11), bg = "white",onvalue = True, offvalue = False)
         self.fever_checkbox.place(x=340, y=622)
-
-        self.cough_symptom = StringVar(value = "No")
-        self.cough_checkbox = tk.Checkbutton(self.window, text="Cough", variable = self.cough_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.cough_symptom = BooleanVar()
+        self.cough_checkbox = tk.Checkbutton(self.window, text="Cough", variable = self.cough_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.cough_checkbox.place(x=340, y=642)
-
-        self.colds_symptom = StringVar(value = "No")
-        self.colds_checkbox = tk.Checkbutton(self.window, text="Colds", variable = self.colds_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.colds_symptom = BooleanVar()
+        self.colds_checkbox = tk.Checkbutton(self.window, text="Colds", variable = self.colds_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.colds_checkbox.place(x=340, y=662)
-
-        self.sore_throat_symptom = StringVar(value = "No")
-        self.sore_throat_checkbox = tk.Checkbutton(self.window, text="Sore throat", variable = self.sore_throat_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.sore_throat_symptom = BooleanVar()
+        self.sore_throat_checkbox = tk.Checkbutton(self.window, text="Sore throat", variable = self.sore_throat_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.sore_throat_checkbox.place(x=340, y=682)
-
-        self.muscle_pain_symptom = StringVar(value = "No")
-        self.muscle_pain_checkbox = tk.Checkbutton(self.window, text="Muscle/body pains", variable = self.muscle_pain_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.muscle_pain_symptom = BooleanVar()
+        self.muscle_pain_checkbox = tk.Checkbutton(self.window, text="Muscle/body pains", variable = self.muscle_pain_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.muscle_pain_checkbox.place(x=340, y=702)
-
-        self.headache_symptom = StringVar(value = "No")
-        self.headache_checkbox = tk.Checkbutton(self.window, text="Headache", variable = self.headache_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.headache_symptom = BooleanVar()
+        self.headache_checkbox = tk.Checkbutton(self.window, text="Headache", variable = self.headache_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.headache_checkbox.place(x=490, y=622)
-
-        self.shortness_of_breath_symptom = StringVar(value = "No")
-        self.shortness_of_breath_checkbox = tk.Checkbutton(self.window, text="Shortness of Breath", variable = self.shortness_of_breath_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.shortness_of_breath_symptom = BooleanVar()
+        self.shortness_of_breath_checkbox = tk.Checkbutton(self.window, text="Shortness of Breath", variable = self.shortness_of_breath_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.shortness_of_breath_checkbox.place(x=490, y=642)
-
-        self.fatigue_symptom = StringVar(value = "No")
-        self.fatigue_checkbox = tk.Checkbutton(self.window, text="Fatigue", variable = self.fatigue_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.fatigue_symptom = BooleanVar()
+        self.fatigue_checkbox = tk.Checkbutton(self.window, text="Fatigue", variable = self.fatigue_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.fatigue_checkbox.place(x=490, y=662)
-
-        self.loss_of_taste_symptom = StringVar(value = "No")
-        self.loss_of_taste_checkbox = tk.Checkbutton(self.window, text="Lost of taste", variable = self.loss_of_taste_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.loss_of_taste_symptom = BooleanVar()
+        self.loss_of_taste_checkbox = tk.Checkbutton(self.window, text="Lost of taste", variable = self.loss_of_taste_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.loss_of_taste_checkbox.place(x=490, y=682)
-
-        self.loss_of_smell_symptom = StringVar(value = "No")
-        self.loss_of_smell_checkbox = tk.Checkbutton(self.window, text="Loss of smell", variable = self.loss_of_smell_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = "Yes", offvalue = "No")
+        self.loss_of_smell_symptom = BooleanVar()
+        self.loss_of_smell_checkbox = tk.Checkbutton(self.window, text="Loss of smell", variable = self.loss_of_smell_symptom, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
         self.loss_of_smell_checkbox.place(x=490, y=702)
+        self.None_of_the_above = BooleanVar()
+        self.nota_checkbox = tk.Checkbutton(self.window, text="None of the Above", variable = self.None_of_the_above, font=("MS Sans Serif", 11), bg = "white", onvalue = True, offvalue = False)
+        self.nota_checkbox.place(x=340, y=722)
 
         # ask question "Have you had exposure to a probable or confirmed case in the last 14 days?"
         self.ques3_label = tk.Label(self.window, text = "3. Have you had exposure to a probable or", fg = "black", bg = "white", font=("Segoe UI",13))
         self.ques3_label.place(x = 680, y = 483, width = 450, height = 20)
-
         self.ques3_label = tk.Label(self.window, text = "confirmed case in the last 14 days?", fg = "black", bg = "white", font=("Segoe UI",13))
         self.ques3_label.place(x = 682, y = 505, width = 420, height = 20)
 
         self.exposure_choice = tk.StringVar(value = 0)
         self.exposure_choice1_radio = tk.Radiobutton(self.window, text="Yes", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="Yes")
         self.exposure_choice1_radio.place(x=765, y=530)
-
         self.exposure_choice2_radio = tk.Radiobutton(self.window, text="No", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="No")
         self.exposure_choice2_radio.place(x=765, y=553)
-
         self.exposure_choice3_radio = tk.Radiobutton(self.window, text="Uncertain", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="Uncertain")
         self.exposure_choice3_radio.place(x=765, y=576)
 
-        self.data_privacy = StringVar(value = "0")
-        self.data_privacy_checkbox = tk.Checkbutton(self.window, text = "I agree to Data Privacy Consent", font=("MS Sans Serif", 11), bg = "white", variable=self.data_privacy, onvalue = "1", offvalue = "0")
+        self.data_privacy = BooleanVar()
+        self.data_privacy_checkbox = tk.Checkbutton(self.window, text = "I agree to Data Privacy Consent", font=("MS Sans Serif", 11), bg = "white", variable=self.data_privacy, onvalue = True, offvalue = False)
         self.data_privacy_checkbox.place(x=760, y=630)
 
         # button for submit entry
@@ -235,20 +206,35 @@ class Register():
         symptoms = {
             "cough": self.cough_symptom.get(),
             "colds": self.colds_symptom.get(),
-            "sore_throat": self.sore_throat_symptom.get(),
-            "shortness_of_breath": self.shortness_of_breath_symptom.get(),
+            "sore throat": self.sore_throat_symptom.get(),
+            "shortness of breath": self.shortness_of_breath_symptom.get(),
             "fatigue": self.fatigue_symptom.get(),
-            "loss_of_taste": self.loss_of_taste_symptom.get(),
-            "loss_of_smell": self.loss_of_smell_symptom.get(),
+            "loss of taste": self.loss_of_taste_symptom.get(),
+            "loss of smell": self.loss_of_smell_symptom.get(),
+            "None of the above": self.None_of_the_above.get()
         }
 
-        # Create table
-        with open('data_entry.csv', 'a', newline='') as file:
-            data_input = csv.writer(file)
-            data_input.writerow([name, age, birthday, email_address, contact_number, gender, address,
-                             cp_name, cp_contact_number, cp_email_address, relationship_to_cp, 
-                             vaccinated, symptoms, exposure])
+        symptom = ", ".join(key for key, value in symptoms.items() if value)
+        if symptom == '':
+            messagebox.showerror("Error", "Please select atleast one of the symptoms.")
+            return
 
+        if name == '' or age == '' or birthday == '' or email_address == '' or contact_number == '' or gender == '' or address == '' or cp_name == '' or cp_contact_number == '' or cp_email_address == '' or relationship_to_cp == '' or vaccinated == '' or exposure == '':
+            messagebox.showerror("Error", "Please fill up all the required fields.")
+            return
+        if data_privacy == False:
+            messagebox.showwarning("Data Privacy Consent", "You must agree to Privacy Notice and Data Privacy Consent.")
+            return
+        else:
+            header = ["Name", "Age", "Birthday", "Email Address", "Contact Number", "Gender", "Address", "Contact Person Name", "C.P. Contact Number", "C.P. Email Address", "Relationship to C.P.", "Vaccination Status", "Symptoms", "Exposure"]
+            i_need_space = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+            # Create table
+            with open('data_list.csv', 'a', newline='') as file:   
+                data_input = csv.writer(file)
+                data_input.writerow(header)
+                data_input.writerow([name, age, birthday,gender, email_address, contact_number, address, cp_name, cp_contact_number, cp_email_address, relationship_to_cp, vaccinated, symptom, exposure])
+                data_input.writerow(i_need_space)
+                
     def clear_info(self):
         self.name_textbox.delete(0, END)
         self.age_spinbox.delete(0, END)
@@ -274,6 +260,7 @@ class Register():
         self.loss_of_smell_checkbox.deselect()
         self.exposure_choice.set(None)
         self.data_privacy_checkbox.deselect()
+        self.nota_checkbox.deselect()
 
     def run(self):
         self.window.mainloop()

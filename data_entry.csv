@@ -1,3 +1,11 @@
 Charles,012,12112003,bernido,131313,0,asdfasdf,asdfasdf,212,asdfasdf,dad,3,2
 Charles David Bernido,19,12112003,bernidocharelsda,0969121313,Male,Val,ernesto,09131828712,ernestober,dad,2nd dose,2
 chasdf,12,111,asdf,asdf,Male,adsfasdf,fasdfa,asdf,asdfa,dfadf,2nd booster shot,"{'cough': 'Yes', 'colds': 'Yes', 'sore_throat': 'Yes', 'shortness_of_breath': 'Yes', 'fatigue': 'Yes', 'loss_of_taste': 'Yes', 'loss_of_smell': 'Yes', 'exposure': 'No'}",No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+Charles,19,12112003,aksjnldfkjasdf,1212,0,asdfasdf,asdfasdfa dsf,0912314,bernidocharlesdavid@,sikeer,2nd dose,"{'cough': 'Yes', 'colds': 'No', 'sore_throat': 'Yes', 'shortness_of_breath': 'No', 'fatigue': 'Yes', 'loss_of_taste': 'No', 'loss_of_smell': 'Yes'}",No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+Charles,19,12112003,aksjnldfkjasdf,1212,0,asdfasdf,asdfasdfa dsf,0912314,bernidocharlesdavid@,sikeer,2nd dose,"{'cough': 'Yes', 'colds': 'No', 'sore_throat': 'Yes', 'shortness_of_breath': 'No', 'fatigue': 'Yes', 'loss_of_taste': 'No', 'loss_of_smell': 'Yes'}",No
+,0,,,dfasdfa,0,asdf,,,,asdf,0,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'No', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No'}",0
+,0,,,dfasdfa,0,asdf,,,,asdf,0,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'No', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No'}",0
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+,0,asdf,asdf,,0,asdf,adsfadf,asdfasdfa,dsf,adfadsf,0,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'No', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No'}",No

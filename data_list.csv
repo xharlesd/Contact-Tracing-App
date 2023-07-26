@@ -1,0 +1,59 @@
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+charles,0,asdf,Male,ad,fadf,asdf,,sdf,asdfasdf,asdf,1st booster shot,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'Yes', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No'}",No
+,0,,0,,,,,,,,0,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'No', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No'}",0
+,0,,0,,,,,,,,0,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'No', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No'}",0
+,0,,0,,,,,,,,0,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'No', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No'}",0
+,0,,0,,,,,,,,0,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'No', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No'}",0
+adsfa,0,asdfad,Male,adsf,asdf,asdfad,fasdf,asd,asdf,sdf,0,"{'cough': 'No', 'colds': 'No', 'sore throat': 'No', 'shortness of breath': 'No', 'fatigue': 'No', 'loss of taste': 'No', 'loss of smell': 'No', 'None of the above': True}",No
+,0,,0,,,,,,,,0,"cough, colds, sore throat, shortness of breath, fatigue, loss of taste, loss of smell",0
+,0,,0,,,,,,,,0,"cough, sore throat, loss of taste",0
+,0,,0,,,,,,,,0,,No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+,0,,0,,,,,,,,0,,0
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+,0,,0,,,,,,,,0,,0
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+,0,,0,,,,,,,,0,,0
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+,0,,0,,,,,,,,0,,0
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+asdf,1,adsf,Male,asdf,asdfaf,asdf,a,dfasdf,asdf,asdf,1st booster shot,,Yes
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+fasdf,0asd,asdfasdf,Female,asdf,asdf,asdf,asd,asdf,df,a,0,"cough, colds, sore throat, shortness of breath, fatigue, loss of taste, loss of smell, None of the above",No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+fasdf,0asd,asdfasdf,Female,asdf,asdf,asdf,asd,asdf,df,a,2nd booster shot,"cough, colds, sore throat, shortness of breath, fatigue, loss of taste, loss of smell, None of the above",No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+fasdf,0asd,asdfasdf,Female,asdf,asdf,asdf,asd,asdf,df,a,1st booster shot,"cough, colds, sore throat, shortness of breath, fatigue, loss of taste, loss of smell, None of the above",No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+fasdf,0asd,asdfasdf,Female,asdf,asdf,asdf,asd,asdf,df,a,1st booster shot,loss of taste,No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+fasdf,0asd,asdfasdf,Female,asdf,asdf,asdf,asd,asdf,df,a,1st booster shot,loss of smell,No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+fasdf,0asd,asdfasdf,Female,asdf,asdf,asdf,asd,asdf,df,a,1st booster shot,shortness of breath,No
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+asfasd,asdf,asdf,0,asdf,afsdf,asdf,asdf,asdf,asdfasdf,adsfasdsdf,0,colds,0
+ , , , , , , , , , , , , , 
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+asdf,0asdf,asdf,0,asdf,asdf,asdf,asdf,sdafas,dfa,sdf,0,"sore throat, fatigue",0
+ , , , , , , , , , , , , , 
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+asdf,0asdf,asdf,0,asdf,asdf,asdf,asdf,asdf,sdfa,adsfadsdfaasdf,0,"sore throat, fatigue",0
+ , , , , , , , , , , , , , 
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+asdf,0asdfasdf,asdf,,sdfasd,fasd,asdf,asdfa,asdf,asdf,fasdfasdf,,"sore throat, shortness of breath, fatigue",
+ , , , , , , , , , , , , , 
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+asdf,0asdfasdf,asdf, ,fasdf,asd,asdf,asd,sdfa,sdfasd,fasdf, ,shortness of breath, 
+ , , , , , , , , , , , , , 
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+asdfaa,0,fasdf,1,asdf,asdf,asdf,asdf,asdf,asdf,asdf,1,shortness of breath,1
+ , , , , , , , , , , , , , 
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+asdfasdf,0,asdfasdfa,1,sdfdsf,asdfa,asdf,sdfasdf,asd,fasdfasdfa,sdfasdf,1st booster shot,loss of taste,Uncertain
+ , , , , , , , , , , , , , 
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+sdf,0asdf,asdf,Male,dfasd,asdfas,asdf,f,asdf,asdfasdf,asdf,0,loss of taste,No
+ , , , , , , , , , , , , , 
+Name,Age,Birthday,Email Address,Contact Number,Gender,Address,Contact Person Name,C.P. Contact Number,C.P. Email Address,Relationship to C.P.,Vaccination Status,Symptoms,Exposure
+a,0adfa,adf,Female,dfadfa,dfadfadfa,asdf,ad,fadsfaf,sdfadf,sadfasdf,2nd dose,shortness of breath,none
+ , , , , , , , , , , , , , 
