@@ -22,7 +22,7 @@ class ContactTracing():
         self.window.geometry('1190x820')  # tkinter frame window
        
         # insert background image
-        original_image = Image.open("Puppic.png")
+        original_image = Image.open("Picture.png")
         resized_image = original_image.resize((420, 950))  
         background_image = ImageTk.PhotoImage(resized_image)
         self.canvas = tk.Canvas(self.window, width=400, height=900)

@@ -294,3 +294,5 @@ class Register():
 if __name__ == "__main__":
     App = Register()
     App.run()
+
+# END OF PROGRAM
