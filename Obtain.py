@@ -9,8 +9,7 @@ import random
 
 # class add entry
 class Register():
-    
-    """"""
+
     # constructor
     def __init__(self):        
         self.window = tk.Tk()
@@ -234,7 +233,7 @@ class Register():
             return
 
         elif not contact_number.isnumeric() or not cp_contact_number.isnumeric() or not age.isnumeric():
-            messagebox.showerror("Error", "Please enter numeric values only in age and contact no.")
+            messagebox.showerror("Error", "Please input numeric values only in age and contact no.")
             return
 
         elif symptom == '':
@@ -251,7 +250,7 @@ class Register():
                 data_input = csv.writer(file)
                 data_input.writerow([name, age, birthday,gender, email_address, contact_number, address, cp_name, cp_contact_number, cp_email_address, relationship_to_cp, vaccinated, symptom, exposure, reference_number])
 
-            messagebox.showinfo("Registration Successful", f"Your Data has been registered successfully. Your reference number is {reference_number}.")
+            messagebox.showinfo("Registration Successful", f"Your data has been registered successfully. Your reference number is {reference_number}, please remember. Thanks!")
     
     def go_back_main(self):
         from Main import ContactTracing

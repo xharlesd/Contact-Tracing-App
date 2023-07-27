@@ -1,4 +1,4 @@
-# Search user data
+# Search for user data
 
 # import necessary modules to be used
 from tkinter import *
