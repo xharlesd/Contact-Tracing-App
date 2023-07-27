@@ -9,10 +9,12 @@ import random
 
 # class add entry
 class Register():
+    
     """"""
     # constructor
-    def __init__(self):
+    def __init__(self):        
         self.window = tk.Tk()
+        
         self.window.title("Contact Tracing App")  # program title
         self.window.geometry('1190x820')  # tkinter frame window
 
@@ -182,6 +184,22 @@ class Register():
         self.clear_Button = tk.Button(self.window, text = "CLEAR", command = self.clear_info, fg = "white", bg = "#008080", font=("Century Gothic",16,"bold"))
         self.clear_Button.place(x = 920, y = 665, width = 155, height = 55)
 
+        # button for back entry
+        self.back_Button = tk.Button(self.window, text = "BACK", command = self.go_back_main, fg = "white", bg = "#7E191B", font=("Century Gothic",12,"bold"))
+        self.back_Button.place(x = 40, y = 680, width = 155, height = 45)
+
+        # button for exit entry
+        self.exit_Button = tk.Button(self.window, text = "EXIT", command = self.exit, fg = "white", bg = "#7E191B", font=("Century Gothic",12,"bold"))
+        self.exit_Button.place(x = 40, y = 740, width = 155, height = 45)
+
+    def go_back_main(self):
+        from Main import ContactTracing
+        self.window.destroy()
+        ContactTracing()
+
+    def exit(self):
+        messagebox.askquestion("Exit Program", "Are you sure?")
+        self.window.quit()
 
     def submit_data(self):
         
@@ -223,11 +241,11 @@ class Register():
             messagebox.showerror("Error", "Please fill up all the required fields.")
             return
         
-        if symptom == '':
+        elif symptom == '':
             messagebox.showerror("Error", "Please select atleast one of the symptoms.")
             return
 
-        if data_privacy == False:
+        elif data_privacy == False:
             messagebox.showwarning("Data Privacy Consent", "You must agree to Privacy Notice and Data Privacy Consent.")
             return
             

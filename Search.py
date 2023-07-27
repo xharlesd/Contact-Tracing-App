@@ -5,7 +5,6 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk 
 import csv
-import pandas as pd
 
 # class search
 class Search():
@@ -108,6 +107,24 @@ class Search():
         self.cp_relationship.place(x=735, y=400, width = 110, height = 35)
         self.display_cp_relationship = tk.Label(self.window, fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
         self.display_cp_relationship.place(x=890, y=400, width = 100, height = 35)
+
+        # button for back entry
+        self.back_Button = tk.Button(self.window, text = "BACK", command = self.go_back_main, fg = "white", bg = "#7E191B", font=("Century Gothic",12,"bold"))
+        self.back_Button.place(x = 40, y = 680, width = 155, height = 45)
+
+        # button for exit entry
+        self.exit_Button = tk.Button(self.window, text = "EXIT", command = self.exit, fg = "white", bg = "#7E191B", font=("Century Gothic",12,"bold"))
+        self.exit_Button.place(x = 40, y = 740, width = 155, height = 45)
+
+    def go_back_main(self):
+        from Main import ContactTracing
+        self.window.destroy()
+        ContactTracing()
+
+    def exit(self):
+        messagebox.askquestion("Exit Program", "Are you sure?")
+        self.window.quit()
+
 
     def search_data(self):
         reference_number = self.search_textbox.get()

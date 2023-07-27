@@ -12,8 +12,8 @@ from tkinter import *
 import tkinter as tk
 from PIL import ImageTk, Image
 # import classes (soon)
-from Obtain import Register
-from Search import Search
+
+
 # App Class
 class ContactTracing():
 
@@ -54,10 +54,12 @@ class ContactTracing():
         self.window.mainloop()
 
     def register_window(self):
+        from Obtain import Register
         self.window.destroy()
         Register()
 
     def search_window(self):
+        from Search import Search
         self.window.destroy()
         Search()
 
