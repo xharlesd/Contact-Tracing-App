@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter as tk 
 import csv
+import pandas as pd
 
 # class search
 class Search():
@@ -108,24 +109,19 @@ class Search():
         self.display_cp_relationship = tk.Label(self.window, fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
         self.display_cp_relationship.place(x=890, y=400, width = 100, height = 35)
 
-
-
-
     def search_data(self):
         reference_number = self.search_textbox.get()
+        
         data_list = []
+
         with open("data_list.csv", "r") as file:
             reader = csv.reader(file)
-            for row in reader:
-                data_list.append(row)
+            for row in reader:        
+                if reference_number in row:
+                    data_list.append(row)
+                    break
 
-        data_found = None
-        for data in data_list:
-            if reference_number in data:
-                data_found = data
-                break
-            
-        if data_found:
+        if data_list:          
             self.display_name.configure(text = f"{row[0]}")
             self.display_age.configure(text = f"{row[1]}")
             self.display_birthday.configure(text = f"{row[2]}")
@@ -136,7 +132,7 @@ class Search():
             self.display_cp_name.configure(text = f"{row[7]}")
             self.display_cp_contact.configure(text = f"{row[8]}")
             self.display_cp_email.configure(text = f"{row[9]}")
-            self.display_cp_relationship.configure(text = f"{row[9]}")
+            self.display_cp_relationship.configure(text = f"{row[10]}")
 
     def run(self):
         self.window.mainloop()
