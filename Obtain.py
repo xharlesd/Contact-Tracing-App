@@ -72,7 +72,7 @@ class Register():
         self.gender_choice1_radio.place(x=600, y=325)
         self.gender_choice2_radio.place(x=680, y=325)
 
-        
+
         # Contact person details
         self.contact_person_details = tk.Label(self.window, text = "Contact Person Details", fg = "#494F55", bg = "white", font=("Helvetica",15,"bold"))
         self.contact_person_details.place(x = 850, y = 143, width = 240, height = 22)
