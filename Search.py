@@ -38,8 +38,8 @@ class Search():
         self.search_Button.place(x = 843, y = 165, width = 71, height = 35)
 
         # Canvas frame for results
-        canvas1 = tk.Canvas(self.window, width = 720, height = 430, bg = "black")
-        canvas2 = tk.Canvas(self.window, width = 710, height = 420, bg = "#F2F3F5")
+        canvas1 = tk.Canvas(self.window, width = 720, height = 400, bg = "black")
+        canvas2 = tk.Canvas(self.window, width = 710, height = 390, bg = "#F2F3F5")
         canvas1.place(x = 345, y = 275)
         canvas2.place(x = 350, y = 280)
 
@@ -68,13 +68,13 @@ class Search():
         self.contact_number.place(x=371, y=450, width = 105, height = 35)
         self.address.place(x=370, y=475, width = 80, height = 35)
 
-        self.display_name = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_age = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_birthday = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_gender = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_email_address = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_contact = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_address = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
+        self.display_name = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_age = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_birthday = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_gender = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_email_address = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_contact = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_address = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
 
         self.display_name.place(x=520, y=330, width = 200, height = 25)
         self.display_age.place(x=520, y=355, width = 200, height = 25)
@@ -95,10 +95,10 @@ class Search():
         self.cp_email.place(x=735, y=375, width = 90, height = 35)
         self.cp_relationship.place(x=735, y=400, width = 110, height = 35)
 
-        self.display_cp_name = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_cp_contact = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_cp_email = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_cp_relationship = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
+        self.display_cp_name = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_cp_contact = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_cp_email = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_cp_relationship = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
 
         self.display_cp_name.place(x=875, y=325, width = 130, height = 35)
         self.display_cp_contact.place(x=875, y=350, width = 130, height = 35)
@@ -114,13 +114,13 @@ class Search():
         self.ques2.place(x=370, y=580, width = 350, height = 20)
         self.ques3.place(x=355, y=633, width = 600, height = 20)
 
-        self.display_ques1 = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_ques2 = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
-        self.display_ques3 = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 11), )
+        self.display_ques1 = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_ques2 = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
+        self.display_ques3 = tk.Label(self.window, anchor="w", justify="left", fg = "#1F2022", bg = "#F2F3F5", font=("MS Sans Serif", 12), )
 
         self.display_ques1.place(x=720, y=550, width = 270, height = 20)
         self.display_ques2.place(x=390, y=605, width = 630, height = 20)
-        self.display_ques3.place(x=390, y=657, width = 400, height = 20)
+        self.display_ques3.place(x=942, y=634, width = 105, height = 20)
 
 
         # Buttons

@@ -160,10 +160,10 @@ class Register():
         self.nota_checkbox.place(x=340, y=722)
 
         # Exposure to probable patient
-        self.ques3_label = tk.Label(self.window, text = "3. Have you had exposure to a probable or", fg = "black", bg = "white", font=("Segoe UI",13))
-        self.ques3_label = tk.Label(self.window, text = "confirmed case in the last 14 days?", fg = "black", bg = "white", font=("Segoe UI",13))
-        self.ques3_label.place(x = 680, y = 483, width = 450, height = 20)
-        self.ques3_label.place(x = 682, y = 505, width = 420, height = 20)
+        self.ques3_label1 = tk.Label(self.window, text = "3. Have you had exposure to a probable or", fg = "black", bg = "white", font=("Segoe UI",13))
+        self.ques3_label2 = tk.Label(self.window, text = "confirmed case in the last 14 days?", fg = "black", bg = "white", font=("Segoe UI",13))
+        self.ques3_label1.place(x = 680, y = 483, width = 450, height = 20)
+        self.ques3_label2.place(x = 682, y = 505, width = 420, height = 20)
 
         self.exposure_choice = tk.StringVar(value = '0')
         self.exposure_choice1_radio = tk.Radiobutton(self.window, text="Yes", font=("MS Sans Serif", 11), bg = "white", variable=self.exposure_choice, value="Yes")
@@ -187,15 +187,6 @@ class Register():
         self.clear_Button.place(x = 920, y = 665, width = 155, height = 55)
         self.back_Button.place(x = 40, y = 680, width = 155, height = 45)
         self.exit_Button.place(x = 40, y = 740, width = 155, height = 45)
-
-    def go_back_main(self):
-        from Main import ContactTracing
-        self.window.destroy()
-        ContactTracing()
-
-    def exit(self):
-        messagebox.askquestion("EXIT PROGRAM", "Are you sure?")
-        self.window.destroy()
 
     def submit_data(self):
         
@@ -243,7 +234,7 @@ class Register():
             return
 
         elif not contact_number.isnumeric() or not cp_contact_number.isnumeric() or not age.isnumeric():
-            messagebox.showerror("Error", "Please enter numeric values only.")
+            messagebox.showerror("Error", "Please enter numeric values only in age and contact no.")
             return
 
         elif symptom == '':
@@ -260,8 +251,17 @@ class Register():
                 data_input = csv.writer(file)
                 data_input.writerow([name, age, birthday,gender, email_address, contact_number, address, cp_name, cp_contact_number, cp_email_address, relationship_to_cp, vaccinated, symptom, exposure, reference_number])
 
-            messagebox.showinfo("Registration Successful", f"Your Data has been registered successfully. Your reference number is {reference_number}")
+            messagebox.showinfo("Registration Successful", f"Your Data has been registered successfully. Your reference number is {reference_number}.")
     
+    def go_back_main(self):
+        from Main import ContactTracing
+        self.window.destroy()
+        ContactTracing()
+
+    def exit(self):
+        messagebox.askquestion("Exit Program", "Are you sure?")
+        self.window.destroy()
+
     def clear_info(self):
         self.name_textbox.delete(0, END)
         self.age_spinbox.delete(0, END)
