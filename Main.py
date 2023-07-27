@@ -48,7 +48,7 @@ class ContactTracing():
         self.register_Button.place(x = 670, y = 340, width = 250, height = 90)
         
         # button for search entry
-        self.search_Button = tk.Button(self.window, text = "SEARCH", fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"), )
+        self.search_Button = tk.Button(self.window, text = "SEARCH", command = self.search_window, fg = "white", bg = "#40B5AD", font=("Century Gothic",24,"bold"), )
         self.search_Button.place(x = 670, y = 450, width = 250, height = 90)
 
         self.window.mainloop()
@@ -56,6 +56,10 @@ class ContactTracing():
     def register_window(self):
         self.window.destroy()
         Register()
+
+    def search_window(self):
+        self.window.destroy()
+        Search()
 
     def run(self):
         self.window.mainloop()
